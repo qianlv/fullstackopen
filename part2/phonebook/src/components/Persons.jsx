@@ -1,6 +1,6 @@
 import RemovePerson from './RemovePerson'
 
-const Persons = ({ filterName, persons, setPersons }) => {
+const Persons = ({ filterName, persons, setPersons, setError }) => {
   return (
     <>
       {
@@ -13,7 +13,9 @@ const Persons = ({ filterName, persons, setPersons }) => {
                   key={person.id}
                   person={person}
                   persons={persons}
-                  setPersons={setPersons} />
+                  setPersons={setPersons}
+                  setError={setError}
+                />
               </div>
             )
           })
