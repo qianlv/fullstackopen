@@ -5,8 +5,8 @@ const RemovePerson = ({ person: removedPerson, persons, setPersons, setError }) 
   const handleRemove = (event) => {
     event.preventDefault()
     if (confirm(`Delete ${removedPerson.name}`)) {
-      personsService.remove(removedPerson.id).then(removeData => {
-        setPersons(persons.filter(person => !isEqual(person, removeData)))
+      personsService.remove(removedPerson.id).then(() => {
+        setPersons(persons.filter(person => !isEqual(person, removedPerson)))
       }).catch(error => {
         console.log(error)
         setError(`Information of ${removedPerson.name} has already been removed from server`)
